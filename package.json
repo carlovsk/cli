@@ -1,0 +1,50 @@
+{
+  "name": "rr",
+  "version": "1.0.0",
+  "description": "CLI tool for orchestrating development tasks across microservices monorepo",
+  "main": "./lib/index.js",
+  "bin": {
+    "rr": "./bin/run.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf lib"
+  },
+  "keywords": [
+    "cli",
+    "monorepo",
+    "microservices",
+    "oclif"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "oclif": {
+    "bin": "rr",
+    "dirname": "rr",
+    "commands": "./lib/commands",
+    "plugins": []
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "dependencies": {
+    "@inquirer/prompts": "^8.3.0",
+    "@oclif/core": "^4.8.1",
+    "@oclif/parser": "^3.8.17"
+  },
+  "devDependencies": {
+    "@oclif/test": "^4.1.16",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.3.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
