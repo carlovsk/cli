@@ -5,6 +5,7 @@ This is a monorepo containing various CLI tools.
 ## Packages
 
 - [`rr`](./packages/rr) - CLI tool for orchestrating development tasks across microservices monorepo
+- [`quota-cli`](./packages/quota) - TypeScript CLI tool that checks AI tool quota/usage across multiple providers
 
 ## Development
 
