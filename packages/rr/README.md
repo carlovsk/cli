@@ -73,6 +73,40 @@ Bump `@rediredi/*` package versions in selected services:
 ./bin/run.js bump 1.2.3 --all
 ```
 
+### code
+Open projects in VS Code:
+
+```bash
+# Interactive project selection
+./bin/run.js code
+
+# Open specific project
+./bin/run.js code api
+
+# Open in new VS Code window
+./bin/run.js code api --new
+
+# List available projects
+./bin/run.js code --list
+```
+
+### opencode
+Open projects in OpenCode:
+
+```bash
+# Interactive project selection
+./bin/run.js opencode
+
+# Open specific project
+./bin/run.js opencode api
+
+# Open in new OpenCode window
+./bin/run.js opencode api --new
+
+# List available projects
+./bin/run.js opencode --list
+```
+
 ## Project Structure
 
 The tool expects your monorepo to have this structure:
@@ -119,3 +153,4 @@ Run tests with: `npm test`
 - **Error Handling**: Proper error handling and reporting
 - **Configuration Management**: Persistent configuration for project root
 - **Version Bumping**: Intelligent bumping of `@rediredi/*` packages only
+- **Editor Integration**: Open projects directly in VS Code with the `code` command or in OpenCode with the `opencode` command

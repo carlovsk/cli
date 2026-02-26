@@ -6,7 +6,7 @@ export default class Config extends Command {
 
   static override examples = [
     'rr config',
-    'rr config set projectRoot /path/to/api',
+    'rr config set projectRoot /path/to/workspace', // e.g., ~/www/rediredi
   ];
 
   static override args = {
@@ -50,12 +50,13 @@ export default class Config extends Command {
     const config = loadConfig();
 
     if (!config) {
-      this.log('No configuration found. Run "rr config set projectRoot <path>" to get started.');
+      this.log('No configuration found. Run "rr config set projectRoot <workspace-path>" to get started.');
+      this.log('Example: rr config set projectRoot ~/www/rediredi');
       return;
     }
 
     this.log('Current configuration:');
-    this.log(`  projectRoot: ${config.projectRoot}`);
+    this.log(`  projectRoot (workspace): ${config.projectRoot}`);
   }
 
   private async setProjectRoot(projectRoot: string): Promise<void> {
@@ -68,6 +69,6 @@ export default class Config extends Command {
     const config = {projectRoot};
     saveConfig(config);
 
-    this.log(`Configuration saved: projectRoot = ${projectRoot}`);
+    this.log(`Configuration saved: workspace root = ${projectRoot}`);
   }
 }
